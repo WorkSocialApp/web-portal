@@ -1,5 +1,5 @@
 require('dotenv');
-const { merge } = require('weboack-merge');
+const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
