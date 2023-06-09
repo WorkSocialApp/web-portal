@@ -4,9 +4,40 @@
 	"description": "The portal of cloverhub",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"watch": "webpack --watch",
+		"start": "webpack serve --config webpack.dev.js",
+		"open": "webpack serve --open --config webpack.dev.js",
+		"build": "webpack server --open --config webpack.prod.js",
+		"clean-dist": "rm -rf dist/*"
 	},
 	"keywords": [],
-	"author": "Aaron, Ciara, Jhonny",
-	"license": "ISC"
+	"author": "Aaron",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.22.5",
+		"@babel/plugin-proposal-class-properties": "^7.18.6",
+		"@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+		"@babel/preset-env": "^7.22.5",
+		"@babel/preset-react": "^7.22.5",
+		"@babel/preset-typescript": "^7.22.5",
+		"babel-loader": "^9.1.2",
+		"css-loader": "^6.8.1",
+		"file-loader": "^6.2.0",
+		"html-webpack-plugin": "^5.5.2",
+		"postcss": "^8.4.24",
+		"sass": "^1.63.3",
+		"sass-loader": "^13.3.1",
+		"style-loader": "^3.3.3",
+		"typescript": "^5.1.3",
+		"webpack": "^5.86.0",
+		"webpack-cli": "^5.1.4",
+		"webpack-dev-server": "^4.15.1",
+		"webpack-merge": "^5.9.0"
+	},
+	"dependencies": {
+		"dotenv": "^16.1.4",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	}
 }
