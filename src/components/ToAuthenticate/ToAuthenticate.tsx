@@ -1,30 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { LoginOrSignup } from './LoginOrSignup/LoginOrSignup';
+import { SelectedCompany } from './SelectedCompany/SelectedCompany';
 import styles from './ToAuthenticate.module.scss';
 
-const companies = [
-	{ name: 'Clover', color: 'green' },
-	{ name: 'Fiserv', color: 'orange' },
-];
-
 export const ToAuthenticate = () => {
+	const [companySelected, setCompanySelected] = useState('');
+
+	const selectCompany = (name) => {
+		setCompanySelected(name);
+	};
+
 	return (
 		<div className={styles.to_authenticate_container}>
-			<div className={styles.wrapper}>
-				<h1 className={styles.select_company}>Select Your Company</h1>
-				<div className={styles.companies_container}>
-					{companies.map((company, idx) => {
-						return (
-							<div
-								key={idx}
-								className={styles.company}
-								style={{ backgroundColor: company.color }}
-							>
-								{company.name}
-							</div>
-						);
-					})}
-				</div>
-			</div>
+			{companySelected ? (
+				<LoginOrSignup company={companySelected} />
+			) : (
+				<SelectedCompany selectCompany={selectCompany} />
+			)}
 		</div>
 	);
 };
