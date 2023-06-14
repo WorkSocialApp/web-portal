@@ -28,4 +28,9 @@
 	font-weight: 400;
 	border: 1px solid grey;
 	border-radius: 1rem;
+
+	&:hover {
+		background-color: #fff !important;
+		color: black !important;
+	}
 }
