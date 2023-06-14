@@ -8,7 +8,7 @@ export const MainFrame = () => {
 			<div className={styles.top_nav_frame}>
 				<TopNav />
 			</div>
-			<div className={styles.main_frame}></div>
+			<div className={styles.centered_frame}></div>
 			<div className={styles.bottom_frame}></div>
 		</div>
 	);
