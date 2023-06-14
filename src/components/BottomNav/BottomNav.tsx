@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './BottomNav.module.scss';
 
 export const BottomNav = () => {
@@ -6,7 +7,7 @@ export const BottomNav = () => {
 		<div className={styles.nav_container}>
 			<h4>
 				Proudly built by Engineers @{' '}
-				<a href="https://www.clover.com">Clover</a>
+				<Link to="https://www.clover.com">Clover</Link>
 			</h4>
 		</div>
 	);
