@@ -2,7 +2,7 @@ require('dotenv').config();
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 
-let port = process.env.PORT;
+let port = process.env.PORT || 8080;
 console.log(port);
 
 module.exports = merge(common, {
