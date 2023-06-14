@@ -1,6 +1,9 @@
-require('dotenv');
+require('dotenv').config();
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
+
+let port = process.env.PORT;
+console.log(port);
 
 module.exports = merge(common, {
 	mode: 'development',
@@ -8,7 +11,7 @@ module.exports = merge(common, {
 	devServer: {
 		hot: true,
 		open: false,
-		port: process.env.PORT,
+		port: port,
 		static: './dist',
 		compress: true,
 		client: {
