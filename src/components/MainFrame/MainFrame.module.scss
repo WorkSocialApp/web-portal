@@ -22,6 +22,8 @@
 		left: 10px;
 		// background-image: linear-gradient(40deg, orange, rgb(17, 223, 17));
 		background-color: #1b8381;
+		border-top-left-radius: 1rem;
+		border-top-right-radius: 1rem;
 	}
 
 	.centered_frame {
@@ -40,5 +42,7 @@
 		left: 10px;
 		background-color: #1b8381;
 		// background-image: linear-gradient(40deg, orange, rgb(17, 223, 17));
+		border-bottom-left-radius: 1rem;
+		border-bottom-right-radius: 1rem;
 	}
 }
