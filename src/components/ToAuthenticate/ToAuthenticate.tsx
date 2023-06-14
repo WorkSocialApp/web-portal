@@ -10,10 +10,17 @@ export const ToAuthenticate = () => {
 		setCompanySelected(name);
 	};
 
+	const removeCompany = (): void => {
+		setCompanySelected('');
+	};
+
 	return (
 		<div className={styles.to_authenticate_container}>
 			{companySelected ? (
-				<LoginOrSignup company={companySelected} />
+				<LoginOrSignup
+					company={companySelected}
+					removeCompany={removeCompany}
+				/>
 			) : (
 				<SelectedCompany selectCompany={selectCompany} />
 			)}

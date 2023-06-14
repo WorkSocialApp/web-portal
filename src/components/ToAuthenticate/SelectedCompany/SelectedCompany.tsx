@@ -16,7 +16,10 @@ export const SelectedCompany = ({ selectCompany }) => {
 						<div
 							key={idx}
 							className={styles.company}
-							style={{ backgroundColor: company.color }}
+							style={{
+								color: company.color,
+								'--companyColor': company.color,
+							}}
 							onClick={() => selectCompany(company.name)}
 						>
 							{company.name}
