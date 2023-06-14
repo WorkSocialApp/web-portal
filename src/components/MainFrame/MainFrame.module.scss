@@ -1,0 +1,40 @@
+.outer_frame {
+	/* 
+		Only for debugging the frame should 
+		the selector below be uncommented.
+	*/
+	> div {
+		border: 1px solid red;
+	}
+
+	/*
+		It's important to note that any direct 
+		divs/frames embedded within this frame 
+		should be set to relative; so that the
+		elements nest appropriately
+	*/
+
+	.top_nav_frame {
+		position: absolute;
+		top: 10px;
+		bottom: 90%;
+		right: 10px;
+		left: 10px;
+	}
+
+	.main_frame {
+		position: absolute;
+		top: 10%;
+		bottom: 10%;
+		right: 10px;
+		left: 10px;
+	}
+
+	.bottom_frame {
+		position: absolute;
+		top: 90%;
+		bottom: 10px;
+		right: 10px;
+		left: 10px;
+	}
+}
