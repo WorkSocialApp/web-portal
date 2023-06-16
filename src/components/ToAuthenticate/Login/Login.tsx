@@ -6,22 +6,26 @@ export const Login = ({ onChange, loginForm, submitLogin }) => {
 	return (
 		<div className={styles}>
 			<form onSubmit={submitLogin}>
-				<label htmlFor="login_email">Email</label>
-				<input
-					value={loginForm.email}
-					onChange={onChange}
-					id="login_email"
-					type="email"
-					name="email"
-				/>
-				<label htmlFor="login_password">Password</label>
-				<input
-					value={loginForm.password}
-					onChange={onChange}
-					id="login_password"
-					type="password"
-					name="password"
-				/>
+				<div>
+					<label htmlFor="login_email">Email</label>
+					<input
+						value={loginForm.email}
+						onChange={onChange}
+						id="login_email"
+						type="email"
+						name="email"
+					/>
+				</div>
+				<div>
+					<label htmlFor="login_password">Password</label>
+					<input
+						value={loginForm.password}
+						onChange={onChange}
+						id="login_password"
+						type="password"
+						name="password"
+					/>
+				</div>
 				<button>Submit</button>
 			</form>
 		</div>

@@ -2,7 +2,6 @@ $color: rgb(12, 204, 238);
 
 .login_signup_container {
 	width: 100%;
-	height: 100%;
 
 	h1 {
 		font-size: 1.5rem;
@@ -10,7 +9,7 @@ $color: rgb(12, 204, 238);
 	}
 
 	> div {
-		margin: 1rem;
+		padding: 1rem;
 	}
 }
 

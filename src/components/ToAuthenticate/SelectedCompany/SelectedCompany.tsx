@@ -9,23 +9,25 @@ const companies = [
 export const SelectedCompany = ({ selectCompany }) => {
 	return (
 		<div className={styles.wrapper}>
-			<h1 className={styles.select_company}>Select Your Company</h1>
-			<div className={styles.companies_container}>
-				{companies.map((company, idx) => {
-					return (
-						<div
-							key={idx}
-							className={styles.company}
-							style={{
-								color: company.color,
-								'--companyColor': company.color,
-							}}
-							onClick={() => selectCompany(company.name)}
-						>
-							{company.name}
-						</div>
-					);
-				})}
+			<div>
+				<h1 className={styles.select_company}>Select Your Company</h1>
+				<div className={styles.companies_container}>
+					{companies.map((company, idx) => {
+						return (
+							<div
+								key={idx}
+								className={styles.company}
+								style={{
+									color: company.color,
+									'--companyColor': company.color,
+								}}
+								onClick={() => selectCompany(company.name)}
+							>
+								{company.name}
+							</div>
+						);
+					})}
+				</div>
 			</div>
 		</div>
 	);
