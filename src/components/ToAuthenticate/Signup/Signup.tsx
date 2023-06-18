@@ -14,6 +14,7 @@ export const Signup = ({ onChange, signupForm, submitSignup }) => {
 							id="signup_email"
 							type="email"
 							name="email"
+							placeholder="Enter your email address"
 						/>
 					</div>
 					<div className={styles.form_control}>
@@ -24,6 +25,7 @@ export const Signup = ({ onChange, signupForm, submitSignup }) => {
 							id="signup_password"
 							type="password"
 							name="password"
+							placeholder="Enter your password"
 						/>
 					</div>
 					<div className={styles.form_control}>
@@ -36,6 +38,7 @@ export const Signup = ({ onChange, signupForm, submitSignup }) => {
 							id="signup_verify_password"
 							type="password"
 							name="verifyPassword"
+							placeholder="Verify your password"
 						/>
 					</div>
 					<div className={styles.form_control}>
