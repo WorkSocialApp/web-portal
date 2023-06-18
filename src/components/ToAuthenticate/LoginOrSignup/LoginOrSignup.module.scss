@@ -22,10 +22,22 @@ $color: rgb(12, 204, 238);
 	}
 }
 
+.options {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.options > * {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
 .signon_option {
 	cursor: pointer;
-
-	width: 50%;
+	margin: 1rem;
+	width: 250px;
 	display: flex;
 	justify-content: center;
 	align-items: center;

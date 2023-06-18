@@ -54,24 +54,26 @@ export const LoginOrSignup = ({ company, removeCompany }) => {
 			</div>
 			<div className={styles.wrapper}>
 				<h1>Hello {company} adventurer!</h1>
-				<div>
-					<div
-						className={`
+				<div className={styles.options}>
+					<div className={styles.signin_options}>
+						<div
+							className={`
 						${styles.signon_option}
 						${signType === 'login' && styles.active}
 					`}
-						onClick={() => sign('login')}
-					>
-						I'm Logging in...
-					</div>
-					<div
-						className={`
+							onClick={() => sign('login')}
+						>
+							I'm Logging in...
+						</div>
+						<div
+							className={`
 							${styles.signon_option}
 							${signType === 'signup' && styles.active}
 						`}
-						onClick={() => sign('signup')}
-					>
-						I'm Signing Up...
+							onClick={() => sign('signup')}
+						>
+							I'm Signing Up...
+						</div>
 					</div>
 				</div>
 			</div>
