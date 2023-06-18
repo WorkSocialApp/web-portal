@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import styles from './Login.module.scss';
 
 export const Login = ({ onChange, loginForm, submitLogin }) => {
-	// console.log(loginForm);
 	return (
 		<div className={styles.login_container}>
 			<form onSubmit={submitLogin}>

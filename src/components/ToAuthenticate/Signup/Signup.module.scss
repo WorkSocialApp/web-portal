@@ -1,0 +1,37 @@
+.signup_container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.form_group {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.form_control {
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 1rem;
+	input {
+		margin-top: 0.5rem;
+		padding: 0.5rem;
+		// width: 100%;
+	}
+}
+
+.submit {
+	width: 100%;
+	background-color: rgb(89, 189, 89);
+	color: #fff;
+	padding: 0.5rem;
+	margin-top: 0.5rem;
+
+	&:hover {
+		background-color: rgb(148, 238, 148);
+		color: #000;
+	}
+}
