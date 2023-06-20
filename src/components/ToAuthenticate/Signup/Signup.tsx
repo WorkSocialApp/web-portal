@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Signup.module.scss';
 
-export const Signup = ({ onChange, signupForm, submitSignup }) => {
+export const Signup = ({
+	onChange,
+	signupForm,
+	submitSignup,
+	signupFormErrors,
+}) => {
 	return (
 		<div className={styles.signup_container}>
 			<form onSubmit={submitSignup}>
+				{signupFormErrors && (
+					<p className={styles.errors}>{signupFormErrors}</p>
+				)}
 				<div className={styles.form_group}>
 					<div className={styles.form_control}>
 						<label htmlFor="signup_email">Email</label>

@@ -19,6 +19,8 @@ export const LoginOrSignup = ({ company, removeCompany }) => {
 	const [signType, setSignType] = useState('');
 	const [loginForm, setLoginForm] = useState(initialLoginFormObj);
 	const [signupForm, setSignupForm] = useState(initialSignupFormObj);
+	const [loginFormErrors, setLoginFormErrors] = useState('');
+	const [signupFormErrors, setSignupFormErrors] = useState('');
 
 	const sign = (type) => {
 		setSignType(type);
@@ -26,6 +28,7 @@ export const LoginOrSignup = ({ company, removeCompany }) => {
 
 	const handleLoginChange = (e) => {
 		const { name, value } = e.target;
+		if (loginFormErrors) setLoginFormErrors('');
 		setLoginForm({
 			...loginForm,
 			[name]: value,
@@ -34,6 +37,7 @@ export const LoginOrSignup = ({ company, removeCompany }) => {
 
 	const handleSignupChange = (e) => {
 		const { name, value } = e.target;
+		if (signupFormErrors) setSignupFormErrors('');
 		setSignupForm({ ...signupForm, [name]: value });
 	};
 
@@ -83,6 +87,7 @@ export const LoginOrSignup = ({ company, removeCompany }) => {
 						onChange={handleLoginChange}
 						loginForm={loginForm}
 						submitLogin={submitLogin}
+						loginFormErrors={loginFormErrors}
 					/>
 				)}
 				{signType === 'signup' && (
@@ -90,6 +95,7 @@ export const LoginOrSignup = ({ company, removeCompany }) => {
 						onChange={handleSignupChange}
 						signupForm={signupForm}
 						submitSignup={submitSignup}
+						signupFormErrors={signupFormErrors}
 					/>
 				)}
 			</div>

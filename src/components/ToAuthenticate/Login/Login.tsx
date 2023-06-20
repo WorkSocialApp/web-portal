@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Login.module.scss';
 
-export const Login = ({ onChange, loginForm, submitLogin }) => {
+export const Login = ({
+	onChange,
+	loginForm,
+	submitLogin,
+	loginFormErrors,
+}) => {
 	return (
 		<div className={styles.login_container}>
 			<form onSubmit={submitLogin}>
+				{loginFormErrors && (
+					<p className={styles.errors}>{loginFormErrors}</p>
+				)}
 				<div className={styles.form_group}>
 					<div className={styles.form_control}>
 						<label htmlFor="login_email">Email</label>
