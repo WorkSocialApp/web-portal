@@ -43,12 +43,30 @@ export const LoginOrSignup = ({ company, removeCompany }) => {
 
 	const submitLogin = (e) => {
 		e.preventDefault();
-		console.log(loginForm);
+		if (!loginForm.email || !loginForm.password) {
+			setLoginFormErrors('Please enter all fields');
+		} else {
+			// do post here
+			console.log(loginForm);
+		}
 	};
 
 	const submitSignup = (e) => {
 		e.preventDefault();
-		console.log(signupForm);
+		if (signupForm.password !== signupForm.verifyPassword) {
+			setSignupFormErrors('Passwords must match');
+		} else {
+			if (
+				!signupForm.email ||
+				!signupForm.password ||
+				!signupForm.verifyPassword
+			) {
+				setSignupFormErrors('Please enter all fields');
+			} else {
+				// do post here
+				console.log(signupForm);
+			}
+		}
 	};
 
 	return (
