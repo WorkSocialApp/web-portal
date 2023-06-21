@@ -43,10 +43,10 @@ $color: rgb(12, 204, 238);
 	align-items: center;
 	height: 2rem;
 	border: 1px solid #000;
+	border-radius: 12px;
 
 	&:hover {
 		box-shadow: 0 0 10px $color;
-		border: $color;
 	}
 
 	&:active {
