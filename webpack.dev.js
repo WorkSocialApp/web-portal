@@ -1,11 +1,12 @@
 require('dotenv').config();
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
+const { EnvironmentPlugin } = require('webpack');
 
 let port = process.env.PORT || 8080;
 console.log(port);
 
-module.exports = merge(common, {
+const devConfig = {
 	mode: 'development',
 	devtool: 'inline-source-map',
 	devServer: {
@@ -19,4 +20,11 @@ module.exports = merge(common, {
 			progress: true,
 		},
 	},
-});
+	plugins: [
+		new EnvironmentPlugin({
+			API_URL: 'http://localhost:8080',
+		}),
+	],
+};
+
+module.exports = merge(common, devConfig);

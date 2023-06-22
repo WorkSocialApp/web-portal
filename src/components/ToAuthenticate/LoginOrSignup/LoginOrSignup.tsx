@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import styles from './LoginOrSignup.module.scss';
 import { BackButton } from '../../BackButton/BackButton';
 import { Login } from '../Login/Login';
@@ -24,6 +25,8 @@ export const LoginOrSignup = ({ company, removeCompany }) => {
 	const [loginFormErrors, setLoginFormErrors] = useState('');
 	const [signupFormErrors, setSignupFormErrors] = useState('');
 
+	const apiURL = process.env.API_URL;
+	console.log(process.env.API_URL);
 	const sign = (type) => {
 		setSignType(type);
 	};
@@ -69,6 +72,7 @@ export const LoginOrSignup = ({ company, removeCompany }) => {
 			} else {
 				// do post here
 				console.log(signupForm);
+				console.log(apiURL);
 			}
 		}
 	};

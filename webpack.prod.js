@@ -1,8 +1,16 @@
 require('dotenv').config();
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
+const { EnvironmentPlugin } = require('webpack');
 
-module.exports = merge(common, {
+const prodConfig = {
 	mode: 'production',
-	devtool: 'source-map', // for debugging in prod
-});
+	devtool: 'source-map',
+	plugins: [
+		new EnvironmentPlugin({
+			API_URL: 'http://worksocial-api.com', // can enter prod API here
+		}),
+	],
+};
+
+module.exports = merge(common, prodConfig);
