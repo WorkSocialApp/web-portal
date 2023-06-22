@@ -4,7 +4,6 @@ const common = require('./webpack.common.js');
 const { EnvironmentPlugin } = require('webpack');
 
 let port = process.env.PORT || 8080;
-console.log(port);
 
 const devConfig = {
 	mode: 'development',
