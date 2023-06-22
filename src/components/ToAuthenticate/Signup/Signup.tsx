@@ -15,6 +15,28 @@ export const Signup = ({
 				)}
 				<div className={styles.form_group}>
 					<div className={styles.form_control}>
+						<label htmlFor="signup_firstname">First Name</label>
+						<input
+							value={signupForm.first_name}
+							onChange={onChange}
+							id="signup_firstname"
+							type="text"
+							name="first_name"
+							placeholder="Enter your First Name"
+						/>
+					</div>
+					<div className={styles.form_control}>
+						<label htmlFor="signup_lastname">Last Name</label>
+						<input
+							value={signupForm.last_name}
+							onChange={onChange}
+							id="signup_lastname"
+							type="text"
+							name="last_name"
+							placeholder="Enter your Last Name"
+						/>
+					</div>
+					<div className={styles.form_control}>
 						<label htmlFor="signup_email">Email</label>
 						<input
 							value={signupForm.email}

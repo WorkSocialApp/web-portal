@@ -10,6 +10,8 @@ const initialLoginFormObj = {
 };
 
 const initialSignupFormObj = {
+	first_name: '',
+	last_name: '',
 	email: '',
 	password: '',
 	verifyPassword: '',
@@ -57,6 +59,8 @@ export const LoginOrSignup = ({ company, removeCompany }) => {
 			setSignupFormErrors('Passwords must match');
 		} else {
 			if (
+				!signupForm.first_name ||
+				!signupForm.last_name ||
 				!signupForm.email ||
 				!signupForm.password ||
 				!signupForm.verifyPassword
