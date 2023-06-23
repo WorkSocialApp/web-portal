@@ -3,7 +3,7 @@ import { LoginOrSignup } from './LoginOrSignup/LoginOrSignup';
 import { SelectedCompany } from './SelectedCompany/SelectedCompany';
 import styles from './ToAuthenticate.module.scss';
 
-export const ToAuthenticate = () => {
+export const ToAuthenticate = ({ setIsLoggedIn }) => {
 	const [companySelected, setCompanySelected] = useState('');
 
 	const selectCompany = (name) => {
@@ -20,6 +20,7 @@ export const ToAuthenticate = () => {
 				<LoginOrSignup
 					company={companySelected}
 					removeCompany={removeCompany}
+					setIsLoggedIn={setIsLoggedIn}
 				/>
 			) : (
 				<SelectedCompany selectCompany={selectCompany} />
