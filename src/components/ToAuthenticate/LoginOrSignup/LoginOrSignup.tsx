@@ -45,13 +45,36 @@ export const LoginOrSignup = ({ company, removeCompany, setIsLoggedIn }) => {
 		setSignupForm({ ...signupForm, [name]: value });
 	};
 
+	const loginFetch = async () => {
+		let body = {
+			email: signupForm.email,
+			password: signupForm.password,
+		};
+		await axios
+			.post(`${apiURL!}/api/auth/login`, body)
+			.then((data) => {
+				// Clear login form
+				// Navigate to /dashboard
+				setLoginForm(initialSignupFormObj);
+				const token = localStorage.setItem(
+					'token',
+					`Bearer ${data.data.token}`
+				);
+				setIsLoggedIn(true);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	};
+
 	const submitLogin = (e) => {
 		e.preventDefault();
 		if (!loginForm.email || !loginForm.password) {
 			setLoginFormErrors('Please enter all fields');
 		} else {
 			// do post here
-			console.log(loginForm);
+			loginFetch();
+			// console.log(loginForm);
 		}
 	};
 
@@ -67,14 +90,13 @@ export const LoginOrSignup = ({ company, removeCompany, setIsLoggedIn }) => {
 			.then((data) => {
 				// Clear signup form
 				// Navigate to /dashboard
-				// setSignupForm(initialSignupFormObj);
-				// setIsLoggedIn(true);
+				setSignupForm(initialSignupFormObj);
 				console.log(data);
 				const token = localStorage.setItem(
 					'token',
 					`Bearer ${data.data.token}`
 				);
-				setIsLoggedIn(true);
+				setIsLoggedIn(true); // we need to make sure this syncs with mainframe actually, same with login
 			})
 			.catch((err) => {
 				console.log(err);

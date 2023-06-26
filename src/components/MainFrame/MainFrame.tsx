@@ -35,9 +35,11 @@ export const MainFrame = () => {
 			.then((data) => {
 				console.log(data);
 				setIsLoggedIn(true);
+				console.log(data.data.user);
 				setUserData(data.data.user);
 			})
 			.catch((err) => {
+				localStorage.removeItem('token');
 				console.log(err);
 			});
 	};
@@ -49,7 +51,7 @@ export const MainFrame = () => {
 
 	useEffect(() => {
 		isAuthenticated();
-	}, []);
+	}, [user.user && user.isLoggedIn]);
 
 	return (
 		<div className={styles.outer_frame}>
